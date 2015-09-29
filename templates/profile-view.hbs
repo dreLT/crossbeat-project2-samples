@@ -1,0 +1,58 @@
+<div id="private-portfolio" class="portfolio row small-collapse gridView">
+
+    <section id="user-hero" > <!--For Now: Removed classes "column gridNum-1" -->
+        <div class="hero-background image-update-container" style="background-image: url('{{header_img}}');">
+            {{#if edit}}
+                <div class="image_edit edit-hero icon-pencil2"></div>
+            {{/if}}
+        </div>
+        <div class="user-icon image-update-container" style="background-image: url('{{picture}}');">
+             {{#if edit}}
+                <div class="image_edit edit-pic icon-pencil2"></div>
+            {{/if}}
+        </div>
+        <div class="user-name">{{first_name}} {{last_name}}</div>
+        <div class="user-description">
+            {{#if edit}}
+                <textarea maxlength="55">{{description}}</textarea><span class="icon-pencil2 rollover-icon"></span>
+            {{else}}
+                {{description}}
+            {{/if}}
+        </div>
+        <div class="user-stats">
+            <span>{{followers}}&nbsp;&nbsp;Followers</span>
+            <span>{{following}}&nbsp;&nbsp;Following</span>
+        </div>
+    </section>
+
+    <div class="view-options">
+        <div class="switch">
+            <a href="javascript:void(0);" class="{{pactive}} btn-portfolio">portfolio</a>
+            <a href="javascript:void(0);" class="{{bactive}} btn-bookmarks">bookmarks</a>
+            <a href="javascript:void(0);" class="{{factive}} btn-followers">followers</a>
+            <a href="javascript:void(0);"  class="{{gactive}} btn-following">following</a>
+            <!-- Statistics Disabled for Beta Release -->
+            <!-- <a href="javascript:void(0);"  class="btn-following">statistics</a> -->
+        </div>
+    </div>
+
+    <!-- TODO This needs to appear only on Portfolio page, current suppressing -->
+    {{#if displayProjectsButton}}
+    <section id="portfolio-filter">
+        <ul class="filter-dropdown">
+            <li class="projects">PROJECTS</li>
+            <li class="archive">ARCHIVE</li>
+            <span class="icon-down arrow"></span>
+        </ul>
+    </section>
+    {{/if}}
+
+    <section id="pieces" class="row small-collapse gridView">
+    </section>
+
+    {{#if edit}}
+        <input type="file" id="file-select-pic" name="fileselect[]" style="position:absolute; top:-100px;"/>
+        <input type="file" id="file-select-header" name="fileselect[]" style="position:absolute; top:-100px;"/>
+    {{/if}}
+
+</div>

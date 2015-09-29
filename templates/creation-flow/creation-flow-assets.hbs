@@ -1,0 +1,168 @@
+<section id="creation-flow-media">
+    <div class="media-sub-nav-holder">
+        <nav class="media-sub-nav">
+    	    <ul>
+    	    	<li>
+    	    		<p class="icon-create-text sub-nav-item" data-sub-section-name="text">
+    	    			<span class="hidden-text">Text</span>
+    				</p>
+    			</li>
+    	    	<li>
+    	    		<p class="icon-create-image sub-nav-item" data-sub-section-name="image">
+    					<span class="hidden-text">Image</span>
+    				</p>
+    			</li>
+    			<li>
+    				<p class="icon-create-film sub-nav-item" data-sub-section-name="video">
+    					<span class="hidden-text">Video</span>
+    				</p>
+    			</li>
+    			<li>
+    				<p class="icon-create-audio sub-nav-item" data-sub-section-name="audio">
+    					<span class="hidden-text">Audio</span>
+    				</p>
+    			</li>
+    	    </ul>
+    	</nav>
+    </div>
+
+	<div id="media-upload-section">
+    	<section id="current-media">
+
+			{{#each media}}
+				{{#equal this.type 'copy'}}
+				<div class="media-item-wrapper text will-fade">
+					<p class="drag-button"><span class="hidden-text">Drag me</span></p>
+					<p class="remove-button icon-x"><span class="hidden-text">Remove me</span></p>
+					<p class="number-label">{{this.id}}</p>
+					<article class="media-item">{{{this.data}}}</article>
+				</div>
+				{{/equal}}
+
+				{{#equal this.type 'image'}}
+				<div class="media-item-wrapper image will-fade">
+					<p class="drag-button"><span class="hidden-text">Drag me</span></p>
+					<p class="remove-button icon-x"><span class="hidden-text">Remove me</span></p>
+					<p class="number-label">{{this.id}}</p>
+					<img class="media-item" src="{{this.data}}"/>
+					<input class="media-item caption" placeholder="caption of image" value="{{this.caption}}" />
+				</div>
+				{{/equal}}
+
+				{{#equal this.type 'video'}}
+				<div class="media-item-wrapper video will-fade video-loading" >
+					<p class="drag-button"><span class="hidden-text">Drag me</span></p>
+					<p class="remove-button icon-x"><span class="hidden-text">Remove me</span></p>
+					<p class="number-label">{{this.id}}</p>
+
+					<div class="video-player-wrapper media-item">
+						<!-- <div class="cover-buttons video-cover">
+							<div class="change-cover">Change Cover</div>
+							<div class="remove-cover">Remove Cover</div>
+						</div> -->
+						<div class="cover-buttons video">
+                <button class="change-cover" data-content-id="{{@index}}">Change Cover</button>
+                <span>|</span>
+                <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove Cover</button>
+            </div>
+						<!-- <div class="video-thumb" style="background-image:url('{{this.image}}')">
+							<button class="video-pause-play video-pause-play-assets-step icon-play"></button>
+						</div> -->
+
+						<video id="video-player" poster="{{this.image}}" controls class="video-js vjs-default-skin creation-flow-video-player assets-video-player">
+              <source src="{{this.webm}}"
+						          type='video/webm;codecs="vp8, vorbis"'/>
+						  <source src="{{this.mp4}}"
+						          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+            </video>
+
+						<!-- <video controls>
+						  <source src="{{this.webm}}"
+						          type='video/webm;codecs="vp8, vorbis"'/>
+						  <source src="{{this.mp4}}"
+						          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+						</video> -->
+
+						<input class="visually-hidden asset-thumb-input" type="file" name="fileselect[]" />
+					</div>
+
+					<input class="media-item caption" placeholder="caption of video" value="{{this.caption}}" />
+				</div>
+				{{/equal}}
+
+				{{#equal this.type 'audio'}}
+				<div class="media-item-wrapper audio will-fade audio-loading" >
+					<p class="drag-button"><span class="hidden-text">Drag me</span></p>
+					<p class="remove-button icon-x"><span class="hidden-text">Remove me</span></p>
+					<p class="number-label">{{this.id}}</p>
+
+					<!-- <div class="cover-buttons video">
+            <p>Edit Cover</p>
+            <button class="change-cover" data-content-id="{{@index}}">Change</button>
+            <span>|</span>
+            <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+           </div> -->
+
+					<div class="media-item audio-player-wrapper" data-audio-file="{{this.filePath}}" data-audio-id="{{this.id}}" data-audio-image-path="{{this.image}}">
+						<div class="audio-thumb">
+								<button class="audio-pause-play"></button>
+						</div>
+						<div class="cover-buttons video">
+                <button class="change-cover" data-content-id="{{@index}}">Change Cover</button>
+                <span>|</span>
+                <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove Cover</button>
+            </div>
+					</div>
+
+					<input class="media-item caption" placeholder="caption of audio" value="{{this.caption}}">
+					<div class="media-item lyrics">{{{this.lyrics}}}</div>
+				</div>
+				{{/equal}}
+			{{/each}}
+    	</section>
+
+	    <div class="input-section">
+	    	<section id="text-input" data-input-name="text">
+	    		<p class="content-input-number number-label">1</p>
+	    		<div class="input-block">
+	    			<div id="text-content"></div>
+				</div>
+			</section>
+
+			<section id="image-input" data-input-name="image">
+				<p class="content-input-number number-label">1</p>
+				<div class="input-block">
+				    <div class="upload-wrapper drop-file-zone" id="image-drop-zone">
+						<p id="filedrag">drop files here <br/>or</p>
+						<label for="file-select-image">Upload images</label>
+						<input type="file" id="file-select-image" name="fileselect[]" multiple="multiple" />
+					</div>
+				</div>
+			</section>
+
+			<section id="video-input" data-input-name="video">
+				<p class="content-input-number number-label">1</p>
+				<div class="input-block">
+				    <div class="upload-wrapper drop-file-zone" id="video-drop-zone">
+						<p id="filedrag">drop files here <br/>or</p>
+						<label for="file-select-video">Upload video</label>
+						<input type="file" id="file-select-video" name="fileselect[]" multiple="multiple" />
+					</div>
+				</div>
+			</section>
+
+			<section id="audio-input" data-input-name="audio">
+				<p class="content-input-number number-label">1</p>
+				<div class="input-block">
+				    <div class="upload-wrapper drop-file-zone" id="audio-drop-zone">
+						<p id="filedrag">drop files here <br/>or</p>
+						<label for="file-select-audio">Upload audio</label>
+						<input type="file" id="file-select-audio" name="fileselect[]" multiple="multiple" />
+					</div>
+				</div>
+
+				<div id="wave"></div>
+			</section>
+		</div>
+	</div>
+</section>

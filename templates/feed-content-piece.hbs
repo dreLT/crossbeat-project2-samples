@@ -1,0 +1,203 @@
+<!-- <div class="list-container"> -->
+
+  <a class="link" href="javascript:void(0);" href="{{url}}" data-content="{{content_id}}"></a>
+    <a href="{{url}}">
+		<div class="crop" style="background-image:url({{renderFeedItem feed_img}})">
+			<div class="hover-state">
+				<div class="overlay"></div>
+        {{#equal type "Photo Gallery"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Photo Essay"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Photo Documentary"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Photo Portfolio"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Illustration Gallery"}}
+          <span class="icon-pen"></span>
+        {{/equal}}
+        {{#equal type "Blog"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Web Comic"}}
+          <span class="icon-pen"></span>
+        {{/equal}}
+        {{#equal type "Short Story"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Written Essay"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Short Form Story"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Long Form Story"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Music Video Gallery"}}
+          <span class="icon-play"></span>
+        {{/equal}}
+        {{#equal type "Audio Gallery"}}
+          <span class="icon-audio"></span>
+        {{/equal}}
+        {{#equal type "Video Gallery"}}
+          <span class="icon-play"></span>
+        {{/equal}}
+        {{#equal type "Mixed Media Gallery"}}
+          <span class="icon-propslogo"></span>
+        {{/equal}}
+        {{#equal type "Content Gallery"}}
+          <span class="icon-propslogo"></span>
+        {{/equal}}
+        {{#equal type "Gallery"}}
+          <span class="icon-propslogo"></span>
+        {{/equal}}
+        {{#equal type "Film Gallery"}}
+          <span class="icon-play"></span>
+        {{/equal}}
+        {{#equal type "Album"}}
+          <span class="icon-audio"></span>
+        {{/equal}}
+        {{#equal type "Playlist"}}
+          <span class="icon-audio"></span>
+        {{/equal}}
+          <!-- <span class="icon-shutter shutter"></span> -->
+			</div>
+		</div>
+	</a>
+    {{!-- <p class="levelup">LEVELING UP / </p> --}}
+
+    <!-- Desktop Arrangement -->
+    <div class="list-item-container-desktop">
+      <div class="icons">
+        <div class="prop-icon">
+            <button class="icon-up up-arrow" data-action="prop-up"/>
+            <span>{{props}}</span>
+            <button class="icon-down down-arrow" data-action="prop-down" />
+            <div class="login-prop-notification">
+              Register to Prop It Up!
+            </div>
+        </div>
+<!--        <span class="icon-shutter"></span>-->
+<!--        <a class="user-icon" style="background-image: url('{{authors.0.picture}}');"></a>-->
+      </div>
+      <div class="contentInfo" data-content="{{content_id}}">
+          <a href="{{url}}"><h2 class="title">{{title}}</h2></a>
+          <a class="author">{{authors.0.name}}</a>
+          <p class="media">{{description}}</p>
+          <!-- Change "tags:" to "Keywords /" -->
+          <p class="tags">{{#tags}}<a>{{this}}</a>{{/tags}}</p>
+      </div>
+    </div>
+
+    <!-- Mobile Arrangement -->
+    <div class="list-item-container-mobile">
+      <div class="contentInfo" data-content="{{content_id}}">
+          <a href="{{url}}"><h2 class="title">{{title}} /</h2></a>
+          <a class="author">{{authors.0.name}}</a>
+          <p class="media">{{description}}</p>
+          <!-- Change "tags:" to "Keywords /" -->
+          <p class="tags"><span>KEYWORDS /</span>&nbsp;&nbsp;{{#tags}}<a>{{this}}</a>{{/tags}}</p>
+      </div>
+      <div class="icons">
+        <div class="prop-icon">
+            <button class="icon-up up-arrow" data-action="prop-up"/>
+            <span>{{props}}</span>
+            <button class="icon-down down-arrow" data-action="prop-down" />
+            <div class="login-prop-notification">
+              Register to Prop It Up!
+            </div>
+        </div>
+        <a class="icon-shutter"></a>
+        <a class="user-icon"></a>
+      </div>
+    </div>
+
+    <!-- Grid Hover Overlay -->
+    <a class="feed-hover-overlay" href="#" data-content="{{content_id}}">
+      <div class="{{category_icon}}"></div>
+      <div class="overlay-info-container">
+
+        {{#equal type "Photo Gallery"}}
+          <span class="overlay-shutter-icon icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Photo Essay"}}
+          <span class="overlay-shutter-icon icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Photo Documentary"}}
+          <span class="overlay-shutter-icon icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Photo Portfolio"}}
+          <span class="overlay-shutter-icon icon-shutter"></span>
+        {{/equal}}
+        {{#equal type "Illustration Gallery"}}
+          <span class="overlay-shutter-icon icon-pen"></span>
+        {{/equal}}
+        {{#equal type "Blog"}}
+          <span class="overlay-shutter-icon icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Web Comic"}}
+          <span class="overlay-shutter-icon icon-pen"></span>
+        {{/equal}}
+        {{#equal type "Short Story"}}
+          <span class="overlay-shutter-icon icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Written Essay"}}
+          <span class="overlay-shutter-icon icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Short Form Story"}}
+          <span class="overlay-shutter-icon icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Long Form Story"}}
+          <span class="overlay-shutter-icon icon-pencil"></span>
+        {{/equal}}
+        {{#equal type "Music Video Gallery"}}
+          <span class="overlay-shutter-icon icon-play"></span>
+        {{/equal}}
+        {{#equal type "Audio Gallery"}}
+          <span class="overlay-shutter-icon icon-audio"></span>
+        {{/equal}}
+        {{#equal type "Video Gallery"}}
+          <span class="overlay-shutter-icon icon-play"></span>
+        {{/equal}}
+        {{#equal type "Mixed Media Gallery"}}
+          <span class="overlay-shutter-icon icon-propslogo"></span>
+        {{/equal}}
+        {{#equal type "Content Gallery"}}
+          <span class="overlay-shutter-icon icon-propslogo"></span>
+        {{/equal}}
+        {{#equal type "Gallery"}}
+          <span class="overlay-shutter-icon icon-propslogo"></span>
+        {{/equal}}
+        {{#equal type "Film Gallery"}}
+          <span class="overlay-shutter-icon icon-play"></span>
+        {{/equal}}
+        {{#equal type "Album"}}
+          <span class="overlay-shutter-icon icon-audio"></span>
+        {{/equal}}
+        {{#equal type "Playlist"}}
+          <span class="overlay-shutter-icon icon-audio"></span>
+        {{/equal}}
+
+        <h2 class="overlay-title">{{title}}</h2>
+        <p class="overlay-author">{{authors.0.name}}</p>
+        <!-- <a class="overlay-author">{{author.0.name}}</a> -->
+      </div>
+    </a>
+
+    <!-- Mobile: Overlay for when no Feed Image -->
+    <!-- <a class="no-image-overlay-mobile" href="#" data-content="{{content_id}}">
+      <div class="{{category_icon}}"></div>
+      <div class="overlay-info-container">
+        <span class="overlay-shutter-icon icon-shutter"></span>
+        <h2 class="overlay-title">{{title}}</h2>
+        <p class="overlay-author">{{authors.0.name}}</p>
+      </div>
+    </a> -->
+
+      <!-- <a class="icon-prop-up prop"><span>{{props}}</span></a> -->
+<!--</div>-->

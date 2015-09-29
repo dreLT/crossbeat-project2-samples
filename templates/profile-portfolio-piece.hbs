@@ -1,0 +1,41 @@
+
+    <div class="crop image-update-container" data-content="{{content_id}}" style="background-image:url({{renderFeedItem feed_img}})">
+
+      {{#if edit}}
+            <div class="image_delete delete icon-bin"></div>
+            <div class="image_edit edit icon-pencil2"></div>
+            <div class="image_move move icon-moveIcon"></div>
+      {{/if}}
+    </div>
+<div class="piece-info-wrapper">
+    {{!-- <p class="levelup">LEVELING UP / </p> --}}
+    <div class="piece-info">
+        <!-- Link -->
+        <span class="date">{{date}}</span>
+
+        <h2 class="title {{#if edit}} edit-field {{/if}}">{{title}}
+            {{#if edit}}<span class="icon-pencil2 rollover-icon">{{/if}}
+        </h2>
+        {{#if edit}}
+            <input class="title updater hide" data-save-on-enter="title" placeholder="{{title}}" value="{{title}}" maxlength="40" />
+        {{/if}}
+        <a class="author">{{authors.0.name}}</a>
+
+        <div class="contentInfo">
+            <p class="media description {{#if edit}} edit-field {{/if}}">{{description}}
+                {{#if edit}}<span class="icon-pencil2 rollover-icon"></span>{{/if}}
+            </p>
+            {{#if edit}}
+                <input class="description media updater hide" data-save-on-enter="description" placeholder="{{description}}" value="{{description}}" maxlength="120" />
+            {{/if}}
+
+            <p class="tags">{{#tags}}<a>{{this}}</a>{{/tags}}</p>
+        </div>
+    </div>
+    <div class="stat-icons">
+        <span class="icon-propslogo prop"><span>{{props}}</span></span>
+        <!--<span class="icon-stat-one prop"><span>{{views}}</span></span>-->
+        <span class="icon-stat-two prop"><span>{{shares}}</span></span>
+        <span class="icon-stat-three prop"><span>{{comments.length}}</span></span>
+    </div>
+</div>

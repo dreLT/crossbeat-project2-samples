@@ -1,0 +1,115 @@
+<div id="collection" class="bookmarks row small-collapse listView">
+  {{#each models}}
+  <div class="column gridNum-1 bookmark-item" style="display: block;" href="javascript:void(0);" data-content="{{this.attributes.content_id}}" href="{{url}}">
+    <div class="crop" data-content="{{this.attributes.content_id}}" style="background-image:url({{renderFeedItem this.attributes.feed_img}})">
+		<div class="hover-state">
+			<div class="overlay"></div>
+        {{#equal this.attributes.type "Photo Gallery"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Photo Essay"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Photo Documentary"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Photo Portfolio"}}
+          <span class="icon-shutter"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Illustration Gallery"}}
+          <span class="icon-pen"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Blog"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Web Comic"}}
+          <span class="icon-pen"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Short Story"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Written Essay"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Short Form Story"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Long Form Story"}}
+          <span class="icon-pencil"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Music Video Gallery"}}
+          <span class="icon-play"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Audio Gallery"}}
+          <span class="icon-audio"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Video Gallery"}}
+          <span class="icon-play"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Mixed Media Gallery"}}
+          <span class="icon-propslogo"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Content Gallery"}}
+          <span class="icon-propslogo"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Gallery"}}
+          <span class="icon-propslogo"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Film Gallery"}}
+          <span class="icon-play"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Album"}}
+          <span class="icon-audio"></span>
+        {{/equal}}
+        {{#equal this.attributes.type "Playlist"}}
+          <span class="icon-audio"></span>
+        {{/equal}}
+	    </div>
+	</div>
+    
+    <!-- Desktop Arrangement -->
+    <div class="list-item-container-desktop">      
+        <div class="right-icons">
+            <!-- <div class="prop-icon bookmark-prop-arrows">
+                <button class="icon-up up-arrow" data-action="prop-up"/>
+                <span>{{this.attributes.props}}</span>
+                <button class="icon-down down-arrow" data-action="prop-down" />
+            </div> -->
+<!--
+            <div class="icon-bookmark bookmark"></div>
+            <div class="icon-shutter"></div>
+            <div class="user-icon" style="background-image:url('{{this.attributes.authors.0.picture}}');"></div>
+-->
+        </div>
+        <div class="contentInfo">
+            <!-- TODO: Link to 'title' and 'author' in JSON -->
+            <a class="media"><h2>{{this.attributes.title}}</h2></a><a class="author">{{this.attributes.authors.0.name}}</a>
+            <p class="description">{{this.attributes.description}}</p>
+            <p class="tags">{{#each this.attributes.tags}}<a>{{this}}</a>{{/each}}</p>
+        </div>
+        <a class="icon-x delete"></a>
+    </div>
+
+    <!-- Mobile Arrangement -->
+    <div class="list-item-container-mobile">    
+        <div class="contentInfo">
+            <!-- TODO: Link to 'title' and 'author' in JSON -->
+            <a class="media"><h2>{{this.attributes.title}}</h2></a><a class="author">{{this.attributes.authors.0.name}}</a>
+            <p class="description">{{this.attributes.description}}</p>
+            <p class="tags">{{#each this.attributes.tags}}<a>{{this}}</a>{{/each}}</p>
+        </div>
+        <div class="right-icons">
+            <!-- <div class="prop-icon bookmark-prop-arrows">
+                <button class="icon-up up-arrow" data-action="prop-up"/>
+                <span>{{this.attributes.props}}</span>
+                <button class="icon-down down-arrow" data-action="prop-down" />
+            </div> -->
+            <div class="icon-bookmark"></div>
+            <div class="icon-shutter"></div>
+            <div class="user-icon" style="background-image:url('{{this.attributes.authors.0.picture}}');"></div>
+        </div>
+    </div>
+
+  </div>
+  {{/each}}
+</div>

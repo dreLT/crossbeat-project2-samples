@@ -1,0 +1,83 @@
+    <div  class="content-hero " style="background-color: #000; background-image: url('{{renderFeedItem feed_img}}');">
+    <span class="content-edit-button">EDIT</span>
+
+    <div class="shadow column gridNum-1">
+        {{#if edit}}
+            <div class="image_edit edit hero-edit">
+                <span class="icon-pencil2"></span>
+            </div>
+            <div class="image_delete delete"><span class="icon-bin"></span></div>
+            {{#inList this.feed_img.type "video,audio"}}
+                <!-- <div class="cover-buttons">
+                    Edit Cover
+                    <div class="arrow"></div>
+                    <button class="change-cover">Change</button>
+
+                    <button class="remove-cover">Remove</button>
+                </div> -->
+                <div class="cover-buttons">
+                    <p>Edit Cover</p>
+                    <button class="change-cover" data-content-id="{{@index}}">Change</button>
+                    <span>|</span>
+                    <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+                </div>
+                <input type="file" id="file-select-image-hero" name="fileselect[]" style="position:absolute; top:-1000000px;"/>
+            {{/inList}}
+            <input type="file" id="file-select-media-hero" name="fileselect[]" style="position:absolute; top:-1000000px;"/>
+        {{/if}}
+        <div class="title-container">
+            <h1 class="title">
+            {{title}}
+            </h1>
+            {{#if edit}}
+            <input type="input" class="title" value="{{title}}"/>
+            <span class="icon-pencil2 edit-icon"></span>
+            {{/if}}
+        </div>
+        <!-- <div class="user-icon" style="background-image: url('{{authors.0.picture}}');"></div> -->
+        {{#if edit}}
+        <a href="#" class="user-icon" style="background-image: url('{{authors.0.picture}}');"></a>
+        <a href="#" class="user-name">by {{authors.0.name}}</a>
+        {{else}}
+        <a href="/#users/{{main_author.user_id}}" class="user-icon" style="background-image: url('{{authors.0.picture}}');"></a>
+        <a href="/#users/{{main_author.user_id}}" class="user-name">by {{authors.0.name}}</a>
+        {{/if}}
+
+        {{#if showFollow}}
+            {{#if alreadyFollowing}}
+                <a class="follow-button following" data-user="{{authors.0.id}}">Following</a>
+            {{else}}
+                <a class="follow-button follow" data-user="{{authors.0.id}}">Follow</a>
+            {{/if}}
+        {{/if}}
+        <!-- <div class="prop-icon">
+            <button class="icon-up up-arrow" data-action="prop-up"/>
+            <span>{{props}}</span>
+            <button class="icon-down down-arrow" data-action="prop-down" />
+        </div> -->
+
+        </div>
+
+    </div>
+
+<div id="scroll-trigger"></div>
+
+<div class="hero-media-accent">
+    <!-- <img class="wave" src="../../images/audio-hero.png"> -->
+    <span class="play-pause-button icon-play"></span>
+
+    {{#equal this.feed_img.type "audio"}}
+    <div class="audio-wavesurf" id="wave-player"></div>
+    {{/equal}}
+</div>
+{{#equal this.feed_img.type "video"}}
+<div class="video-wrapper">
+<video id="video-player" controls class="video-js vjs-default-skin creation-flow-video-player edit-video-player">
+  <source src="{{this.webm}}"
+          type='video/webm;codecs="vp8, vorbis"'/>
+
+  <source src="{{this.mp4}}"
+          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+</video>
+</div>
+{{/equal}}

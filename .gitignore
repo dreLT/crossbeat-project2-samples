@@ -1,0 +1,7 @@
+**/DS_Store
+**/.vagrant
+logs/access_log
+logs/error_log
+/app/prepros.cfg
+/app/.sass-cache
+/sh.exe.stackdump

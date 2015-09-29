@@ -1,0 +1,352 @@
+#login-flow {
+    width: 96%;
+    max-width: 468px;
+    margin: auto;
+	margin-bottom: 100px;
+    margin-top: 70px;
+
+    #logo {
+      img {
+        width: 280px;
+      }
+    }
+
+    #login-form {
+      position: relative;
+    }
+
+    img {
+        width: 60%;
+        margin: auto;
+        display:block;
+        margin-bottom: 80px;
+    }
+
+    input, textarea {
+      width: 72%;
+      background: transparent;
+      border: 0px;
+      padding: 19px;
+      font-family: 'proxima-nova', Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #2e2e2e;
+		resize: none;
+    }
+	
+	.forgot-password{
+		@include proxima-nova-bold();
+	  	font-weight: 700;
+		color: #494949;
+		font-size: 12px;
+		position: absolute;
+    top: 74px;
+    right: 0;
+		
+		&:hover {
+                color: $link-hover-grey;
+            }
+
+	}
+
+
+	
+	.buttons{
+		width:450px;
+		padding-left:20px;
+		padding-right:20px;
+		margin-top:20px;
+		
+
+		a {
+			width: 200px;
+			margin: auto;
+			padding: 10px;
+			border: 3px solid #000;
+			margin-bottom: 10px;
+			text-align: center;
+			display:inline-block;
+			margin-right:2px;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+		}
+	}
+	
+	.connect-social{
+		
+		text-align:center;
+		margin-top:40px;
+		
+		span{
+		  @include proxima-nova-bold();
+		  font-weight: 700;
+		  font-size:25px;
+		  color: #000;
+		  text-align: center;
+		}
+		
+		.social-icons{
+			font-size:20px;
+			color: #000;
+			margin-top: 20px;
+			margin-left: 105px;
+			margin-right:31px;
+			
+			&:hover {
+                color: $link-hover-grey;
+            }
+			
+			.icon-fb , .icon-twit {
+				font-size:20px;
+				margin-top:20px;
+				text-align:center;
+				color:#fff;
+				
+				&:before{
+					
+				  border-radius: 50%;
+				  background-color: #000;
+				  display: inline-block;
+				  height: 49px;
+				  text-align: center;
+				  padding-top: 13px;
+				  width: 49px;
+				  line-height: 1;
+				  color: #ffffff;
+				}
+				
+			
+		}
+		
+	}
+
+	}
+	
+}
+
+// Registration Page
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset;
+}
+
+#login-flow.registration-page {
+  max-width: none;
+  width: 65%;
+  // padding: 0 $global-edge-margin;
+  #register-form {
+    .information {
+      width: 63%;
+      float: left;
+//      margin-right: 37px;
+		
+		input{
+			width:40%;
+		}
+		
+      .field {
+        position: relative;
+        border-bottom: 1px solid #ccc;
+		  
+		 #password{
+		     padding-bottom: 10px;
+		 }
+		  
+		 .password-require{
+			color: $light-grey;
+			font-size: 10px;
+			@include proxima-nova-bold();
+			display: block;
+			margin-left: 20px;
+			padding-bottom:5px;
+		 }
+			 
+		 }
+		 
+        label.error {
+          font-family: 'proxima-nova', Helvetica, sans-serif;
+          font-weight: 700;;
+          color: #D5514D;
+          font-size: 10px;
+          width: 58%;
+          vertical-align: middle;
+          display: inline-block;
+          max-height: 42px;
+          overflow: hidden;
+          text-align: right;
+        }
+        #bio {
+          border: none;
+		  resize: none;
+		  height:80px;
+        }
+      }
+      .field:last-of-type {
+        border-bottom: 0;
+        textarea {
+          width: 100%;
+        }
+        label {
+          vertical-align: top;
+          margin-top: 17px;
+        }
+      }
+    }      
+    .profile-image {
+      float: right;
+      position: relative;
+      label {
+        height: 283px;
+        width: 255px;
+        display: block;
+        border: 1px dashed #D5D5D5;
+        border-radius: 0;
+        background-image: url('/images/register-image.png');
+        margin-top: 52px;
+      }
+      input {
+        opacity: 0;
+        position: absolute;
+      }
+      .directions {
+        position: absolute;
+        bottom: -29px;
+        left: 0;
+        right: 0;
+        span {
+          @include proxima-nova-bold();
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+    }
+    #register-btn {
+      clear: both;
+      display: block;
+      width: 200px;
+      margin: auto;
+      padding: 10px;
+      border: 3px solid #000;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+
+
+
+@media only screen and (max-width:640px) {
+	#login-flow{
+		.forgot-password{
+			// position:initial;
+			// margin-left:10px;
+			
+		}
+		
+	 	#logo{
+			margin-top:30px;
+		}
+	}
+
+	#login-flow.registration-page {
+	  width: 90%;
+	  margin: auto;
+
+	  #register-form {
+
+		.information {
+			width: 100%;
+			margin:auto;
+		}
+		
+		.profile-image{
+			float:none;
+			margin-bottom:120px;
+			text-align:left;
+			
+			label.profile-image {
+				margin-top:50px;
+	
+			}
+			
+			div.directions{
+				span.directions{
+					text-align:left;
+					padding-left:4%;
+				}
+			}
+			
+		}
+		
+		#register-btn{
+//			margin-left:4%;
+//			float:left;
+			margin:auto;
+			margin-bottom:100px;
+		}
+	  }
+	}
+}
+@media only screen and (max-width:440px) {
+	#login-flow {
+    width: 96%;
+    max-width: 300px;
+    margin: auto;
+	  margin-bottom: 100px;
+    margin-top: 100px;
+		
+		input{
+			 #password{
+				margin-bottom: 10px;
+			 }
+		}
+		
+		.forgot-password{
+			// position:initial;
+			// margin-left:10px;
+		}
+		
+		
+		.buttons{
+		width:264px;
+		padding-left:10px;
+		padding-right:10px;
+		margin-right:35px;
+		margin-left:35px;
+
+			a {
+				width: 100px;
+			}
+			
+			#login-btn{
+				margin-right:20px;
+			}
+		}
+		
+		.connect-social{
+			
+			span{
+				font-size:18px;
+			}
+			
+			.social-icons{
+			  margin-top: 31px;
+			  margin-left: 25px;
+			  margin-right: 25px;
+			
+
+				.icon-fb , .icon-twit{
+					display:inline;
+				}
+			}
+			
+		}
+	}
+}

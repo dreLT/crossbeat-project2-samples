@@ -1,0 +1,54 @@
+<!-- Error Notification -->
+<!-- <div class="error-overlay">
+  <div class="error-heading">
+    <span class="error-message"></span>
+  </div>
+</div> -->
+
+<section id="login-flow">
+    <div id="logo">
+        <img src="images/props-full-logo.png">
+    </div>
+    <form id="register-form">
+        <!-- <div id="error"></div> -->
+        <fieldset class="information">
+            <div class="field">
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" value="" maxlength="30" autofocus></input>
+            </div>
+            <div class="field">
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" value="" maxlength="30"></input>
+            </div>
+            <div class="field">
+                <input type="email" id="Email" name="email" placeholder="Email" value=""></input>
+            </div>
+            <div class="field">
+                <input type="text" id="username" name="username" placeholder="Username" value="" maxlength="20"></input>
+            </div>
+            <div class="field">
+                <input type="password" id="password" name="password" placeholder="Create Password" value=""></input>
+				<span class="password-require">Password must contain no less than 6 characters, 1 uppercase, 1 number and 1 special character</span>
+            </div>
+            <div class="field">
+                <input type="password" id="password_verify" name="password_verify" placeholder="Confirm Password" value=""></input>
+            </div>
+            <div class="field">
+                <textarea id="bio" name="bio" placeholder="Write a short bio"></textarea>
+            </div>
+        </fieldset>
+        <fieldset class="profile-image">
+            <!-- <p>Profile Picture</p> -->
+            <label for="file-select-media" class="profile_image"></label>
+            <input type="file" id="file-select-media" name="fileselect[]" >
+            <div class="directions">
+                <span class="directions">Upload Photo</span>
+            </div>
+            <!-- <p>Header Picture</p> -->
+            <!-- <div class="header_image"></div>
+            <input type="file" id="file-select-media2" name="fileselect[]" > -->
+        </fieldset>
+        <input type="button" value="Register" id="register-btn"></input>
+        <!-- href="javascript:void(0);" -->
+<!--         <a href="">Connect</a>
+        <a href="">Connect</a> -->
+    </form>
+</section>

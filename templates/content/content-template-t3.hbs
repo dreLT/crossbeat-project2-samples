@@ -1,0 +1,406 @@
+<div class="row collapse sort_container template-{{color}}">
+
+    <!-- <h1>HEY {{attributes.layout}}</h1> -->
+
+    {{#each attributes.media}}
+
+        {{#moduloIf @index 3 0}}
+
+                {{#equal this.type "image"}}
+                <div class="column small-12 sortable">
+                    <div class="content-image " style="" alt="" data-content-id="{{@index}}" data-content-type="image" data-content-caption="{{caption}}">
+                        {{#if ../../../attributes.edit}}
+                            {{> contentEditButtons}}
+                            <div class="delete-confirmation">
+                                <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                            </div>
+                        {{/if}}
+
+                        <img src="{{this.data}}"/>
+                    </div>
+
+                    {{#if ../../attributes.edit}}
+                        {{#if this.caption}}
+                            <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                            <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+                        {{/if}}
+                    {{/if}}
+
+                </div>
+                {{/equal}}
+
+                {{#equal this.type "copy"}}
+                <div class="column small-12 sortable">
+                    {{#if ../../../attributes.edit}}
+                        <div class="content-copy" data-content-id="{{@index}}" data-content-type="copy">
+                            <div class=" text-edit-true">
+                                {{{this.data}}}
+                            </div>
+                            {{> contentEditButtons}}
+                            <div class="delete-confirmation">
+                                <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="content-copy" data-content-id="{{@index}}" data-content-type="copy">{{{this.data}}}</div>
+                    {{/if}}
+                </div>
+                {{/equal}}
+
+
+        {{#equal this.type "audio"}}
+            <div class="column small-12 sortable audio-item">
+                <div class="content-audio" data-content-id="{{@index}}" data-content-type="audio">
+                {{#if ../../../attributes.edit}}
+
+                        {{> contentEditButtons}}
+                        <div class="delete-confirmation">
+                            <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                        </div>
+                    
+
+                {{else}}
+                    <div class="content-audio" data-content-id="{{@index}}" data-content-type="audio">{{{this.data}}}</div>
+                {{/if}}
+
+                <div class="audio-player-wrapper" data-audio-file="{{this.filePath}}" data-audio-id="{{this.id}}" data-caption="{{this.caption}}" data-image-file="{{this.image}}" >
+                    <div class="cover-buttons audio">
+                        <button class="change-cover" data-content-id="{{@index}}" >Change Cover</button>
+                        <span>|</span>
+                        <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove Cover</button>
+                    </div>
+                </div>
+
+                {{#if this.caption}}
+                    <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                    <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+                {{/if}}
+
+                {{#if this.lyrics}}
+                    <div class="lyrics">{{{this.lyrics}}}</div>
+                {{/if}}
+                </div>
+
+          </div>
+        {{/equal}}
+
+            {{#equal this.type 'video'}}
+            <div class="column small-12 sortable">
+                {{#if ../../../attributes.edit}}
+                   <div class="content-image video-thumb"  style="" alt="" data-content-id="{{@index}}" data-content-type="video" data-content-caption="{{caption}}" data-mp4-url="{{this.mp4}}" data-webm-url="{{this.webm}}">
+                <video id="video-player" poster="{{this.image}}" controls class="video-js vjs-default-skin creation-flow-video-player edit-video-player">
+                  <source src="{{this.webm}}"
+                          type='video/webm;codecs="vp8, vorbis"'/>
+
+                  <source src="{{this.mp4}}"
+                          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+                </video>
+
+                        {{> contentEditButtons}}
+                        <div class="delete-confirmation">
+                            <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                        </div>
+                        <div class="cover-buttons video">
+                            <p>Edit Cover</p>
+                            <button class="change-cover" data-content-id="{{@index}}">Change</button>
+                            <span>|</span>
+                            <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+                        </div>
+
+                    <div class="icon-play"></div>
+
+
+                </div>
+
+
+                    {{#if this.caption}}
+                        <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                        <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+                    {{/if}}
+
+                {{else}}
+
+                <div class="content-image video-thumb" style="" alt="" data-content-id="{{@index}}" data-content-type="video" data-content-caption="{{caption}}" data-mp4-url="{{this.mp4}}" data-webm-url="{{this.webm}}">
+                <video id="video-player" controls class="video-js vjs-default-skin creation-flow-video-player ">
+                  <source src="{{this.webm}}"
+                          type='video/webm;codecs="vp8, vorbis"'/>
+
+                  <source src="{{this.mp4}}"
+                          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+                </video>
+
+
+                    <div class="icon-play"></div>
+
+                    <img src="{{this.image}}"/>
+                </div>
+
+                {{/if}}
+            </div>
+        {{/equal}}
+
+        {{/moduloIf}}
+
+        {{#moduloIf @index 3 1}}
+            {{#equal this.type "image"}}
+                <div class="column small-6 sortable">
+                    <div class="content-image " style="" alt="" data-content-id="{{@index}}" data-content-type="image" data-content-caption="{{caption}}">
+                        {{#if ../../../attributes.edit}}
+                            {{> contentEditButtons}}
+                            <div class="delete-confirmation">
+                                <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                            </div>
+
+                        {{/if}}
+
+                        <img src="{{this.data}}"/>
+                    </div>
+                </div>
+                {{/equal}}
+
+                {{#equal this.type "copy"}}
+                <div class="column small-6 sortable">
+                    {{#if ../../../attributes.edit}}
+                        <div class="content-copy" data-content-id="{{@index}}" data-content-type="copy">
+                            <div class=" text-edit-true">
+                                {{{this.data}}}
+                            </div>
+                            {{> contentEditButtons}}
+                            <div class="delete-confirmation">
+                                <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="content-copy" data-content-id="{{@index}}" data-content-type="copy">{{{this.data}}}</div>
+                    {{/if}}
+                </div>
+                {{/equal}}
+
+
+        {{#equal this.type "audio"}}
+            <div class="column small-12 sortable audio-item">
+                <div class="content-audio" data-content-id="{{@index}}" data-content-type="audio">
+                {{#if ../../../attributes.edit}}
+
+                        {{> contentEditButtons}}
+                        <div class="delete-confirmation">
+                            <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                        </div>
+
+                {{else}}
+                    <div class="content-audio" data-content-id="{{@index}}" data-content-type="audio">{{{this.data}}}</div>
+                {{/if}}
+
+                <div class="audio-player-wrapper" data-audio-file="{{this.filePath}}" data-audio-id="{{this.id}}" data-caption="{{this.caption}}" data-image-file="{{this.image}}" >
+                    <div class="cover-buttons audio">
+                        <button class="change-cover" data-content-id="{{@index}}">Change Cover</button>
+                        <span>|</span>
+                        <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove Cover</button>
+                    </div>
+                </div>
+
+
+                {{#if this.caption}}
+                    <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                    <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+                {{/if}}
+
+                {{#if this.lyrics}}
+                    <div class="lyrics">{{{this.lyrics}}}</div>
+                {{/if}}
+                </div>
+              </div>
+
+        {{/equal}}
+
+            {{#equal this.type 'video'}}
+            <div class="column small-6  sortable">
+                  {{#if ../../../attributes.edit}}
+                   <div class="content-image video-thumb"  style="" alt="" data-content-id="{{@index}}" data-content-type="video" data-content-caption="{{caption}}" data-mp4-url="{{this.mp4}}" data-webm-url="{{this.webm}}">
+                <video id="video-player" poster="{{this.image}}" controls class="video-js vjs-default-skin creation-flow-video-player edit-video-player">
+                  <source src="{{this.webm}}"
+                          type='video/webm;codecs="vp8, vorbis"'/>
+
+                  <source src="{{this.mp4}}"
+                          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+                </video>
+
+                        {{> contentEditButtons}}
+                        <div class="delete-confirmation">
+                            <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                        </div>
+                        <div class="cover-buttons video">
+                            <p>Edit Cover</p>
+                            <button class="change-cover" data-content-id="{{@index}}">Change</button>
+                            <span>|</span>
+                            <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+                        </div>
+
+                    <div class="icon-play"></div>
+
+
+                </div>
+
+
+                    {{#if this.caption}}
+                        <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                        <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+                    {{/if}}
+
+                {{else}}
+
+                <div class="content-image video-thumb" style="" alt="" data-content-id="{{@index}}" data-content-type="video" data-content-caption="{{caption}}" data-mp4-url="{{this.mp4}}" data-webm-url="{{this.webm}}">
+                <video id="video-player" controls class="video-js vjs-default-skin creation-flow-video-player ">
+                  <source src="{{this.webm}}"
+                          type='video/webm;codecs="vp8, vorbis"'/>
+
+                  <source src="{{this.mp4}}"
+                          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+                </video>
+
+
+                    <div class="icon-play"></div>
+
+                    <img src="{{this.image}}"/>
+                </div>
+
+                {{/if}}
+            </div>
+        {{/equal}}
+        {{/moduloIf}}
+
+        {{#moduloIf @index 3 2}}
+           {{#equal this.type "image"}}
+                <div class="column small-6 sortable">
+                    <div class="content-image " style="" alt="" data-content-id="{{@index}}" data-content-type="image" data-content-caption="{{caption}}">
+                        {{#if ../../../attributes.edit}}
+                            {{> contentEditButtons}}
+
+                            <div class="delete-confirmation">
+                                <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                            </div>
+                        {{/if}}
+
+                        <img src="{{this.data}}"/>
+                    </div>
+                </div>
+                {{/equal}}
+
+                {{#equal this.type "copy"}}
+                <div class="column small-6 sortable">
+                    {{#if ../../../attributes.edit}}
+                        <div class="content-copy" data-content-id="{{@index}}" data-content-type="copy">
+                            <div class=" text-edit-true">
+                                {{{this.data}}}
+                            </div>
+                            {{> contentEditButtons}}
+                            <div class="delete-confirmation">
+                                <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="content-copy" data-content-id="{{@index}}" data-content-type="copy">{{{this.data}}}</div>
+                    {{/if}}
+                </div>
+                {{/equal}}
+
+
+        {{#equal this.type "audio"}}
+            <div class="column small-12 sortable audio-item">
+                 <div class="content-audio" data-content-id="{{@index}}" data-content-type="audio">
+            {{#if ../../../attributes.edit}}
+
+                    {{> contentEditButtons}}
+
+                    <div class="delete-confirmation">
+                        <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                    </div>
+                
+
+            {{else}}
+                <div class="content-audio" data-content-id="{{@index}}" data-content-type="audio">{{{this.data}}}</div>
+            {{/if}}
+
+            <div class="audio-player-wrapper" data-audio-file="{{this.filePath}}" data-audio-id="{{this.id}}" data-caption="{{this.caption}}" data-image-file="{{this.image}}" >
+                <div class="cover-buttons audio">
+                    <button class="change-cover" data-content-id="{{@index}}">Change Cover</button>
+                    <span>|</span>
+                    <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove Cover</button>
+                </div>
+            </div>
+
+            {{#if this.caption}}
+                <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+            {{/if}}
+
+            {{#if this.lyrics}}
+                <div class="lyrics">{{{this.lyrics}}}</div>
+            {{/if}}
+            </div>
+          </div>
+        {{/equal}}
+
+            {{#equal this.type 'video'}}
+            <div class="column small-6  sortable">
+                 {{#if ../../../attributes.edit}}
+                   <div class="content-image video-thumb"  style="" alt="" data-content-id="{{@index}}" data-content-type="video" data-content-caption="{{caption}}" data-mp4-url="{{this.mp4}}" data-webm-url="{{this.webm}}">
+                <video id="video-player" poster="{{this.image}}" controls class="video-js vjs-default-skin creation-flow-video-player edit-video-player">
+                  <source src="{{this.webm}}"
+                          type='video/webm;codecs="vp8, vorbis"'/>
+
+                  <source src="{{this.mp4}}"
+                          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+                </video>
+
+                        {{> contentEditButtons}}
+                        <div class="delete-confirmation">
+                            <p>Are you sure you want to go ahead and delete? <span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+                        </div>
+                        <div class="cover-buttons video">
+                            <p>Edit Cover</p>
+                            <button class="change-cover" data-content-id="{{@index}}">Change</button>
+                            <span>|</span>
+                            <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+                        </div>
+
+                    <div class="icon-play"></div>
+
+
+                </div>
+
+
+                    {{#if this.caption}}
+                        <p data-save-on-enter="caption" class="content-caption display">{{this.caption}}</p>
+                        <input data-content-id="{{@index}}" class="content-caption updater hide" value="{{this.caption}}"/>
+                    {{/if}}
+
+                {{else}}
+
+                <div class="content-image video-thumb" style="" alt="" data-content-id="{{@index}}" data-content-type="video" data-content-caption="{{caption}}" data-mp4-url="{{this.mp4}}" data-webm-url="{{this.webm}}">
+                <video id="video-player" controls class="video-js vjs-default-skin creation-flow-video-player ">
+                  <source src="{{this.webm}}"
+                          type='video/webm;codecs="vp8, vorbis"'/>
+
+                  <source src="{{this.mp4}}"
+                          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+                </video>
+
+
+                    <div class="icon-play"></div>
+
+                    <img src="{{this.image}}"/>
+                </div>
+
+                {{/if}}
+            </div>
+        {{/equal}}
+        {{/moduloIf}}
+
+        {{#inList this.type "video,audio"}}
+         {{#if ../../attributes.edit}}
+
+         {{/if}}
+        {{/inList}}
+    {{/each}}
+</div>

@@ -1,0 +1,38 @@
+
+<div id="small-screen-message">
+    <p>We want you to have the best experience possible when you create new content, which requires a <i>tad</i> more space. Please expand your browser or use a different device if neccessary.</p>
+</div>
+
+<div id="pagedata">
+    <nav id="creation-header-navigation" class="creation-flow-nav">
+        <ol>
+            <!--populated with javascript by {Props.FlowConfig.steps} -->
+        </ol>
+        <header class="create-title">{{title}}</header>
+    </nav>
+
+    <div class="creation-flow-step"></div>
+
+    <nav id="creation-footer-navigation" class="creation-flow-nav">
+        <p class="steps">
+           <span id="step-number" class="number"></span>
+           <span class="icon-slash slash"></span>
+           <span class="hidden-text">of</span>
+           <span id="total-steps" class="number"></span>
+        </p>
+
+        <ul>
+            <li class="step-nav-back">
+                <a class="not-active icon-left">
+                    <span class="hidden-text">Back</span>
+                </a>
+            </li>
+            <li class="step-nav-forward">
+                <a class="active icon-right">
+                    <span class="hidden-text">Forward</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+

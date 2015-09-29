@@ -1,0 +1,25 @@
+#loader {
+
+	#progress-info {
+		@include proxima-nova-bold();
+		background-color: $black;
+		color: $white;
+    margin: auto;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 400px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 44px;
+    z-index: 4000;
+	}
+
+	&.hide-progress {
+		#progress-info {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charse="utf-8">
+    <title>PRoPS - Featured Admin</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+  </head>
+  <body>
+    <script id="content-template" type="text/x-handlebars-template">
+      <h1>Admin: Featured Content</h1>
+      <table>
+        <thead>
+          <tr class="header-row">
+            <td>Feed Image</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Feature</td>
+          </tr>
+        </thead>
+        {{#each this}}
+        <tr class="body-row">
+          {{#equal this.feed_img.type "video"}}
+            <td><img class="thumbnail" src="{{this.feed_img.image}}"></td>  
+          {{/equal}}
+          {{#equal this.feed_img.type "audio"}}
+            <td><img class="thumbnail" src="{{this.feed_img.image}}"></td>  
+          {{/equal}}
+          {{#equal this.feed_img.type "image"}}
+            <td><img class="thumbnail" src="{{this.feed_img.image}}"></td>  
+          {{/equal}}
+          {{#ifString this.feed_img}}
+            <td><img class="thumbnail" src="{{this.feed_img}}"></td>
+          {{/ifString}}
+          <td class="title">{{this.title}}</td>
+          <td class="author">{{this.authors.0.name}}</td>
+          <td class="feature-checkbox"><input type="checkbox" name="mark-featured" id="mark-featured" {{#if this.featured}}checked{{/if}}></td>
+        </tr>
+        {{/each}}
+      </table>
+    </script>
+    <script src="js/featured.js"></script>
+  </body>
+</html>

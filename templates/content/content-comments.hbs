@@ -1,0 +1,24 @@
+<section class="column gridNum-1" >
+    <form id="comment-form">
+        <label for="comment-field" class="add-comment">ADD COMMENTS</label>
+        <label class="add" for="comment-field">+</label>
+        <input type="text" autocomplete="off" maxlength="255" id="comment-field" class="comment-field"/>
+        <a class="comment-submit-button">Enter</a>
+        <input class="submit">
+        <input type="submit" class="submit">
+        <div class="login-comment-notification">
+            Please Register to Comment
+        </div>
+    </form>
+    <hr>
+    {{#each this}}
+    <div class="comment">
+        <a class="comment-user-icon" style="background-image:url('{{this.author.picture}}');" ></a>
+        <div class="comment-text">
+            <a href="#users/{{ author_id }}" class="comment-author">{{this.author.first_name}}</a>
+            <p>{{this.text}}</p>
+        </div>
+    </div>
+    {{/each}}
+
+</section>

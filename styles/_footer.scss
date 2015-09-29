@@ -1,0 +1,70 @@
+footer {
+  height: 142px;
+  font-family: Helvetica, "Helvetica Neue", sans-serif ;
+}
+footer {
+  background: #000;
+  color: #fff;
+  height: 167px;
+  a{color: #fff;}
+  .social{
+    margin:42px 0 30px 0;
+    a{
+        padding: 5px;
+        &:before{
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        &.icon-fb:before{
+              vertical-align: 2px;
+        }
+        &:hover {
+          color: #9E9E9E;
+        }
+    }
+  }
+  .terms span, .terms a{
+    padding: 0 11px;
+    font-size: 11px;
+    @include proxima-nova-bold();
+  }
+  .terms span.current-year {
+    padding: 0;
+  }
+  .terms a:hover {
+    color: #9E9E9E;
+  }
+  .social, .terms{
+    text-align: center;
+  }
+}
+
+// Margin to give space at bottom for sticky nav on Content View
+.sticky-nav-parking {
+  margin-bottom: 95px;
+}
+
+ @media only screen and (max-width:640px) {
+	 
+	 footer{
+		 
+		 .terms a{
+			padding: 0 3px;
+			font-size: 10px;
+		 }
+	 }
+ }
+
+ @media only screen and (max-width:440px) {
+	 
+	 footer{
+		 .terms{
+		 	margin-right: 7px;
+		 }
+		 .terms a{
+			  padding: 0 3px;
+			 font-size: 8px;
+		 }
+	}
+ }
+ 

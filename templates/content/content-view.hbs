@@ -1,0 +1,98 @@
+<div class="content-view">
+    <section id= "content-hero"></section>
+
+    <article id="content-main"></article>
+
+    <section id="content-tags" class="column gridNum-1" >
+       {{#each tags}}
+        <a href="javascript:void(0);" class="tag" data-tag="{{ this }}">{{ this }}</a>
+        {{/each}}
+    </section>
+
+    <div id="content-comments" class="row"></div>
+
+    <section id="content-author" class="column gridNum-1" >
+        <div class="user-icon" style="background-image: url('{{main_author.picture}}');"></div>
+        <div class="username">by {{authors.0.name}}</div>
+		<div class="profession">{{main_author.description}}</div>
+        <a href="{{main_author.website}}" target="_blank" class="website text-link">{{main_author.website}}</a>
+        <span>Contact:</span>&nbsp;<a href="mailto:{{main_author.email}}" class="email text-link">{{main_author.email}}</a>
+
+		<br>
+
+        <div class= "line-break">
+			<p class=more-projects><span>More Projects</span></p>
+		</div>
+    </section>
+
+<!--
+	<section id="user-social-media">
+		<a id="icons" class="icon-fb"></a>
+		<a id="icons" class="icon-twit"></a>
+		<a id="icons" class="icon-insta"></a>
+		<a id="icons" class="icon-pint"></a>
+	</section>
+-->
+
+		<section id="content-related" class="column gridNum-1" ></section>
+
+
+
+        <div id="model">
+            <div class="overlay"></div>
+            <div class="icon-x model-close"></div>
+			<!-- <div class="navigate">
+					<button class="show-info">Show Info +</button>
+					<div class=number >3 / 4</div>
+			</div> -->
+            <div class="mcontent">
+                <div class="modal-image-wrapper">
+                    <img id="mcontent-img" src="">
+                    <div id="mcaption"></div>
+                    <div class="left-right-buttons">
+                        <div class="icon-left model-last"></div>
+                        <div class="icon-right model-next"></div>
+                    </div>
+                </div>
+                <div class="modal-video-wrapper">
+                    <div id="mcaptionv"></div>
+                    <video id="modal-video-player" controls autoplay class="video-js vjs-default-skin">
+                      <source class="src-webm" src=""
+                              type="video/webm;"/>
+                      <source class="src-mp4" src=""
+                              type="video/mp4;"/>
+                    </video>
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+<div class="back-to-top-button">
+    <div class="arrow icon-up"></div>
+    <span>Back to Top</span>
+</div>
+
+<div id="content-footer-nav">
+    <div class="user">
+        <a class="user-icon" style="background-image: url('{{main_author.picture}}');" href="/#users/{{main_author.user_id}}"></a>
+        <a class="user-name" href="/#users/{{main_author.user_id}}">{{authors.0.name}}</a>
+    </div>
+    <div class="icons">
+        <div class="props-wrapper">
+            <div class="prop-icon">
+                <button class="icon-up up-arrow" data-action="prop-up"/>
+                <span>{{props}}</span>
+                <button class="icon-down down-arrow" data-action="prop-down" />
+            </div>
+            <div class="login-prop-notification">
+                Register to Prop It Up!
+            </div>
+        </div>
+        <a class="icon-share inactive"></a>
+        <a class="icon-bookmark bookmark" data-content="{{this.content_id}}"></a>
+    </div>
+    <a class="icon-left {{#unless this.contentNav.prev}}disabled{{/unless}}" href="/#{{#if this.contentNav.prev}}content/{{this.contentNav.prev}}{{/if}}"></a>
+    <a class="icon-right {{#unless this.contentNav.next}}disabled{{/unless}}" href="/#{{#if this.contentNav.next}}content/{{this.contentNav.next}}{{/if}}"></a>
+</div>

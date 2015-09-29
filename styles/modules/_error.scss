@@ -1,0 +1,38 @@
+.error-overlay {
+  opacity: 0;
+  z-index: -4000;
+  position: relative;
+  -webkit-transition: opacity .25s;
+  -moz-transition: opacity .25s;
+  transition: opacity .25s;
+  .error-heading {
+    top: 0;
+    right: 0;
+    background-color: #000;
+    left: 0;
+    height: 109px;
+    color: #fff;
+    position: fixed;
+    z-index: 4000;
+    text-align: center;
+    .error-message {
+      @include proxima-nova-bold();
+      font-size: 17px;
+      display: inline-block;
+      margin-top: 40px;
+    }
+    .error-close {
+      position: absolute;
+      right: 2.5%;
+      top: 39%;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+.error-overlay.show {
+  opacity: 1;
+  z-index: 4000;
+}

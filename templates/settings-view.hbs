@@ -1,0 +1,162 @@
+<!-- Error Notification -->
+<div class="error-overlay">
+  <div class="error-heading">
+    <span class="error-message">Oops! Your password is not strong enough.</span>
+    <span class="error-close icon-x"></span>
+  </div>
+</div>
+<div class="error-directions">
+  <ul>
+    <li>Make it at least 8 characters long.</li>
+    <li>Include at least one number and one capital letter.</li>
+  </ul>
+  <div class="left-arrow"></div>
+</div>
+
+
+
+<div class="settings-view">
+  <form id="account-info" action="#" method="post">
+    <section class="account-info">
+      <h3>Account Information</h3>
+      <fieldset>
+        <p>
+          <label for="name">First Name</label>
+          <input type="text" id="fname" name="fname" value="{{first_name}}" maxlength="18">
+          <span class="pencil icon-pencil2"></span>
+        </p>
+        <p>
+          <label for="name">Last Name</label>
+          <input type="text" id="lname" name="lname" value="{{last_name}}" maxlength="18">
+          <span class="pencil icon-pencil2"></span>
+        </p>
+        <p>
+          <label>Username</label>
+          <input id="username" disabled="disabled" placeholder="{{user_name}}">
+          <!-- <label for="username">Username</label>
+          <input type="text" id="username" name="username" value="{{user_name}}" maxlength="16">
+          <span class="pencil icon-pencil2"></span> -->
+        </p>
+        <p>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" value="" maxlength="18">
+          <span class="pencil icon-pencil2"></span>
+        </p>
+        <p>
+          <label for="password-confirm">Confirm Password</label>
+          <input type="password" id="password-confirm" name="password_confirm" value="" maxlength="18">
+          <span class="pencil icon-pencil2"></span>
+        </p>
+        <!--<p>
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" value="{{location}}">-->
+        </p>
+        <!--
+        <p>
+          <label for="account-type">Account Type</label>
+            <select id="account-type">
+                <option {{setLevel level "creator"}}>Creator</option>
+                <option {{setLevel level "writer"}}>Writer</option>
+                <option {{setLevel level "photographer"}}>Photographer</option>
+            </select>
+        </p>-->
+      </fieldset>
+
+      <!-- TODO: Make this a submit input -->
+      <input value="Update" type="submit" class="save-btn">
+    </section>
+  </form>
+
+    <!--
+    <section class="notifications">
+      <h3>Notifications</h3>
+      <fieldset>
+        <div>
+          <p class="notification-instructions">An email will be sent to you when there is:</p>
+          <label class="settings-switch">
+            <input type="checkbox" class="switch-input">
+            <span class="switch-status" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+          </label>
+          <span class="switch-label">Activity on your projects</span>
+          <br />
+          <label class="settings-switch">
+            <input type="checkbox" class="switch-input">
+            <span class="switch-status" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+          </label>
+          <span class="switch-label">Activity on your portfolio</span>
+          <p class="email-set">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{email}}">
+          </p>
+        </div>
+      </fieldset>
+    </section>
+    <section class="connections">
+      <h3>Connections</h3>
+      <fieldset>
+        <p>
+          <label class="settings-switch">
+            <input type="checkbox" class="switch-input" name="twitter-connect">
+            <span class="switch-status" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+          </label>
+          <span class="switch-label">Twitter Connect</span>
+          <br />
+          <label class="settings-switch">
+            <input type="checkbox" class="switch-input" name="facebook-connect">
+            <span class="switch-status" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+          </label>
+          <span class="switch-label">Facebook Connect</span>
+          <br />
+          <label class="settings-switch">
+            <input type="checkbox" class="switch-input" name="instagram-connect">
+            <span class="switch-status" data-on="On" data-off="Off"></span>
+            <span class="switch-handle"></span>
+          </label>
+          <span class="switch-label">Instagram Connect</span>
+        </p>
+      </fieldset>
+    </section>-->
+  <form id="account-bio">
+    <section class="your-info">
+      <h3>Your Links</h3>
+      <fieldset>
+        <p>
+          <label for="site_url">Your Site</label>
+          <input type="url" id="site-url" name="site-url" value="{{website}}">
+          <span class="pencil icon-pencil2"></span>
+        </p>
+        <p>
+          <label for="bio">Your Bio</label>
+          <textarea id="bio" name="bio" value="{{bio}}"></textarea>
+          <span class="pencil icon-pencil2"></span>
+        </p>
+      </fieldset>
+        <input value="Update" type="submit" class="save-btn save-info-button">
+        <!--
+        <p>
+          <label for="twitter-handle">Twitter</label>
+          <input type="text" id="twitter-handle" name="twitter-handle" value="">
+        </p>
+        <p>
+          <label for="instagram-handle">Instagram</label>
+          <input type="text" id="instagram-handle" name="instagram-handle" value="">
+        </p>
+        <p>
+          <label for="facebook-page">Facebook</label>
+          <input type="text" id="facebook-page" name="facebook-page" value="">
+        </p>-->
+    </section>
+  </form>
+  <form>
+    <section class="deactivate-account">
+      <h3>Deactive Account</h3>
+      <p class="deactivate-instructions">Deactivating your account will remove it from PROPS within a few minutes. You can sign back in whenever to reactivate your account and restore its content.</p>
+      <button type="button">Deactivate</button>
+      <p class="delete-instructions">If you want to permanently delete your account and remove your content, please send us a request.</p>
+    </section>
+  </form>
+</div>

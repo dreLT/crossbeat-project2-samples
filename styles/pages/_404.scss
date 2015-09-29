@@ -1,0 +1,48 @@
+.container {
+  background-repeat: no-repeat;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  min-height: 757px;
+  h1, p, a {
+      text-align: center;
+  }
+  h1 {
+      font-family: 'proxima-nova', Helvetica, sans-serif;
+      font-weight: 900;
+      font-size: 170px;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 40px;
+  }
+  p.tag-line {
+      margin: -18px 0 0 0;
+      font-size: 34px;
+      font-family: 'proxima-nova', Helvetica, sans-serif;
+      font-weight: 700;
+  }
+  p.author {
+      font-family: 'proxima-nova', Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      margin: 30px 0; 
+  }
+  a.back-button {
+      font-size: 18px;
+      padding: 13px 0;
+      border: 3px solid#fff;
+      display: inline-block;
+      width: 152px;
+      margin: 45px 0 130px 0;
+      color: #fff;
+  }
+}
+
+.background-blackout {
+  background-image: url('/images/404-blackout.jpg');
+  background-position-y: 100%;
+  padding-bottom: 5%;
+}
+.background-ghosttown {
+  background-image: url('/images/404-ghosttown.jpg');
+}

@@ -1,0 +1,37 @@
+<article class="{{playerType}}-player">
+	<div class="audio-loader">
+		<!-- <p>Loading audio player... File: {{this.waveFilePath}}</p> -->
+		<img src="images/loading-inline.gif">
+	</div>
+
+	{{#equal playerType 'content'}}
+		<div class="audio-player">
+        	<a class="play-pause-button icon-play" style="background-image: url('{{this.image}}');"></a>
+	    </div>
+	    <div class="audio-content" data-content="{{content_id}}">
+            <a href="{{url}}"><h2 class="title">{{this.caption}}</h2></a>
+            <!-- <a class="author">David Justus</a> -->
+            <p class="description">{{this.lyrics}}</p>
+      <div class="audio-wavesurf" id="wave-{{this.waveId}}" style="margin-bottom:1em;"></div>
+    </div>
+	{{/equal}}
+
+	{{#equal playerType 'flow'}}
+    
+		<div class="audio-image-wrapper" style="background-image: url('{{this.image}}');">
+                            
+			<div class="cover-buttons audio-cover">
+							<div class="change-cover">Change Cover</div>
+							<div class="remove-cover">Remove Cover</div>
+						</div>
+			<label class="visually-hidden" for="file-select-image-audio-{{this.waveId}}">Upload images</label>
+			<input class="visually-hidden asset-thumb-input" type="file" id="file-select-image-audio-{{this.waveId}}" name="fileselect[]" />
+		</div>
+
+		<button class="play-pause-button icon-play"></button>
+		<button class="change-asset">Change Asset</button>
+
+		<div class="audio-wavesurf" id="wave-{{this.waveId}}"></div>
+	{{/equal}}
+    
+</article>

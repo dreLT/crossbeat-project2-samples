@@ -1,0 +1,318 @@
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+
+/* ----------- Galaxy Tab 10.1 ----------- */
+
+/* Portrait and Landscape */
+@media
+  (min-device-width: 800px)
+  and (max-device-width: 1280px) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Portrait */
+@media
+  (max-device-width: 800px)
+  and (orientation: portrait) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Landscape */
+@media
+  (max-device-width: 1280px)
+  and (orientation: landscape) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* ----------- Asus Nexus 7 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 601px)
+  and (device-height: 906px)
+  and (-webkit-min-device-pixel-ratio: 1.331)
+  and (-webkit-max-device-pixel-ratio: 1.332) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 601px)
+  and (device-height: 906px)
+  and (-webkit-min-device-pixel-ratio: 1.331)
+  and (-webkit-max-device-pixel-ratio: 1.332)
+  and (orientation: portrait) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 601px)
+  and (device-height: 906px)
+  and (-webkit-min-device-pixel-ratio: 1.331)
+  and (-webkit-max-device-pixel-ratio: 1.332)
+  and (orientation: landscape) {
+      .new-project {
+          display: none !important;
+      }
+      .content-edit-button {
+          display: none !important;
+      }
+      .image_edit, .image_delete, .image_move {
+          display: none !important;
+      }
+      .image_edit:hover, .image_delete:hover, .image_move:hover {
+          display: none !important;
+      }
+
+}

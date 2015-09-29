@@ -1,0 +1,29 @@
+
+<section id="creation-flow-keywords">
+
+    <section id="creation-flow-description">
+        <header class="header">Make it Searchable</header>
+        <div class="tags" id="search-tags">
+            {{#if tags}}
+                {{#each tags}}
+                    <p class="keyword-button icon-x will-fade"><span>{{this}}</span></p>
+                {{/each}}
+            {{/if}}
+        </div>
+		 <textarea id="content-keywords" data-save-on-enter="keywords" placeholder="Add Keywords" maxlength="120">{{description}}</textarea>
+<!--
+        <label class="sub-header" for="keyword-add">Add</label>
+        <input id="keyword-add" data-save-on-enter="true" placeholder="Keywords"></input>
+-->
+    </section>
+
+    <section id="creation-flow-description">
+        {{#if description}}
+                <label class="header" for="content-description">Current Description:</label>
+        {{else}}
+                <label class="header" for="content-description">What is it about?</label>
+        {{/if}}
+        <textarea id="content-description" data-save-on-enter="description" placeholder="Start typing description" maxlength="120">{{description}}</textarea>
+    </section>
+
+</section>

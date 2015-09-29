@@ -1,0 +1,105 @@
+<section id="creation-flow-type" class="title-step-input">
+    <label for="content-type" class="super-header">I would like to create a</label>
+    <input class="header" id="content-type" placeholder="Start Typing" value="{{#if type}}{{type}}{{/if}}"/>
+</section>
+
+<section id="creation-flow-title" class="title-step-input">
+    <input class="header" id="content-title" data-save-on-enter="title" placeholder="Titled" value="{{#if title}}{{title}}{{/if}}" maxlength="40"/>
+</section>
+
+<section id="creation-flow-cover-photo" class="title-step-input">
+
+    {{#if feed_img.image}}
+    	<input class="visually-hidden" type="file" id="file-upload-feed-img" name="fileselect"/>
+
+    	{{#equal this.feed_img.type 'audio'}}
+
+    		<h2 class="super-header">Cover audio:</h2>
+
+    		<div class="cover-buttons audio">
+          <button class="change-cover" data-content-id="{{@index}}">Change</button>
+          <span>|</span>
+          <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+        </div>
+
+          <div class="audio-player-wrapper" data-audio-image-path="{{this.feed_img.image}}" data-audio-id="{{this.feed_img.type}}" data-audio-file="{{this.feed_img.filePath}}">
+    				{{> contentEditButtons}}
+
+					<!-- <p class="change feed-img-button image_edit icon-pencil2">
+						<span class="hidden-text">Change cover photo</span>
+					</p>
+					<p class="remove feed-img-button image_delete icon-bin">
+						<span class="hidden-text">Remove cover photo</span>
+					</p> -->
+				</div>
+
+
+    	{{/equal}}
+
+
+    	{{#equal this.feed_img.type 'video'}}
+
+    		<h2 class="super-header">Cover video:</h2>
+			<div class="video-player-wrapper title-step">
+
+				{{> contentEditButtons}}
+
+
+				<div class="video-thumb" style="background-image:url('{{this.feed_img.image}}')">
+
+					<button class="video-pause-play video-pause-play-title-step icon-play"></button>
+
+				</div>
+
+        <div class="cover-buttons video">
+            <p>Edit Cover</p>
+            <button class="change-cover" data-content-id="{{@index}}">Change</button>
+            <span>|</span>
+            <button class="remove-cover" data-content-id="{{@index}}" data-content-type="{{this.type}}" >Remove</button>
+        </div>
+
+				<video id="video-player" controls class="video-js vjs-default-skin creation-flow-video-player title-video-player">
+				  <source src="{{this.feed_img.webm}}"
+				          type='video/webm;codecs="vp8, vorbis"'/>
+
+				  <source src="{{this.feed_img.mp4}}"
+				          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+				</video>
+
+			</div>
+		{{/equal}}
+
+    {{else}}
+
+		{{#if feed_img}}
+        <h2 class="super-header">Cover image:</h2>
+			<div id="feed-img-container" class="image-update-container">
+				<p class="change feed-img-button image_edit icon-pencil2">
+					<span class="hidden-text">Change cover photo</span>
+				</p>
+				<p class="remove feed-img-button image_delete icon-bin">
+					<span class="hidden-text">Remove cover photo</span>
+				</p>
+				<img src="{{feed_img}}"/>
+		</div>
+
+			<div id="image-drop-zone" class="upload-wrapper">
+				<label for="file-upload-feed-img">Upload image</label>
+				<input type="file" id="file-upload-feed-img" name="fileselect"/>
+	    	</div>
+
+    	{{else}}
+
+		    <h2 id="cover-photo-header" class="super-header">Choose a cover asset</h2>
+		    <div id="image-drop-zone" class="upload-wrapper">
+				<label for="file-upload-feed-img">Upload image, video, audio</label>
+				<input type="file" id="file-upload-feed-img" name="fileselect"/>
+				<p class="drop-files-text"><span class="needs-space">or</span> drop files here</p>
+				<p class="skip-button">Skip</p>
+		    </div>
+	    {{/if}}
+  	{{/if}}
+
+  	<input type="file" id="asset-upload-feed-img" name="fileselect" style="display:none;"/>
+
+</section>

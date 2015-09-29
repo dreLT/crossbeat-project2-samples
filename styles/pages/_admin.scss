@@ -1,0 +1,37 @@
+h1 {
+  margin-bottom: 30px;
+}
+table {
+  width: 1117px;
+  margin: 0 auto;
+  thead {
+    tr.header-row {
+      height: 50px;
+      background-color: #D3D3D3;
+      td {
+        border-right: 1px solid $light-grey;
+        text-align: center;
+        font-weight: bold;
+      }
+      td:last-of-type {
+        border-right: 0;
+      }
+    }
+  }
+  tr.body-row {
+    border-bottom: 1px solid $light-grey;
+    height: 400px;
+    td {
+      .thumbnail {
+        width: 500px;
+      }
+    }
+    .title, .author {
+      font-size: 26px;
+      padding: 0 33px;
+    }
+    .feature-checkbox {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+<section id="edit-controls">
+    <ul class="control-wrapper-left">
+        <li class="change-template"><a> Change Template </a></li>
+        <li class="add-text"><a><span class="icon-create-text"></span> Add Text </a></li>
+        <li class="add-image"><a><span class="icon-create-image"></span>Upload Assets </a></li>
+        <li class="save"><a>Save </a></li>
+        <li class="delete">
+            <a><span class="icon-bin"></span></a>
+        </li>
+    </ul>
+    <div class="delete-confirmation-controls delete-confirmation">
+        <p>Are you sure you want to go ahead and delete?<br><span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+    </div>
+
+    <div class="save-notice">
+        <p>Are you sure you want to close without saving?<br><span class="delete-yes">yes</span> or <span class="delete-no">no</span></p>
+    </div>
+
+    <div class="control-wrapper-right">
+        <div id="comments-switch">
+            <p class="settings-switch {{#if showComments}}settings-switch-on{{/if}}">
+                <span class="switch-status" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+            </p>
+            <p class="comments">Comments</p>
+        </div>
+
+        <ul class="color-controls">
+            <li class="close"><a> <span class="icon-x"></span> </a></li>
+            <li class="grey color-item" data-color="grey"></li>
+            <li class="light color-item" data-color="white"></li>
+            <li class="dark color-item" data-color="black"></li>
+        </ul>
+    </div>
+</section>
+
+<section class="layout-types edit-layout-view">
+
+        <div class="subheader">Select Layout</div>
+        <div data-template="t2" class="layout-type-item three-img content-view active" id="preview-t2">
+        </div>
+        <div data-template="t4" class="layout-type-item text-layout content-view" id="preview-t4">
+        </div>
+        <div data-template="t5" class="layout-type-item text-layout content-view" id="preview-t5">
+        </div>
+        <div data-template="t3" class="layout-type-item text-layout content-view" id="preview-t3">
+        </div>
+        <div data-template="t1" class="layout-type-item text-layout content-view" id="preview-t1">
+        </div>
+
+        <span class="close-layout-types icon-x"></span>
+
+</section>
+
+<div class="edit-content">
+
+    <div class="content-view content-edit-view">
+        <section id= "content-hero">
+
+        </section>
+
+
+        <article id="content-main">
+
+        </article>
+
+        <section id="content-tags" class="column gridNum-1" >
+           {{#each tags}}
+            <a href="" class="tag">{{ this }}</a>
+            {{/each}}
+        </section>
+    </div>
+
+
+    <input class="hey" type="file" id="file-select-media2" name="fileselect[]" multiple="multiple" style="position:absolute; top:-100px;"/>
+</div>
+
+<input type="file" id="file-select-cover-image" name="fileselect[]" style="position:absolute; top:-1000000px;"/>
+
+<div id="small-screen-message">
+    <p>We want you to have the best experience possible when you create new content, which requires a <i>tad</i> more space. Please expand your browser or use a different device if neccessary.</p>
+</div>

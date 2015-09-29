@@ -1,0 +1,33 @@
+.content-copy {
+    padding: 1em;
+    width: 100%;
+
+    .image_edit {
+        display: none;
+    }
+}
+
+#content-main-layout {
+	.column {
+
+		.video-player-wrapper video {
+			width: 100%;
+		}
+
+		.content-copy {
+			border: 1px solid black;
+		}
+	}
+}
+
+.content-edit-view {
+
+    .audio-item {
+        // padding: 24px 0 12px 0;
+        // border-bottom: 1px solid #eee;
+
+        &:hover {
+            @include props-global-box-shadow-outer;
+        }
+    }
+}

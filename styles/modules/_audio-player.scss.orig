@@ -1,0 +1,204 @@
+.audio-player-module {
+
+    .audio-loader {
+        display: none;
+    }
+
+    &.audio-loading {
+        .audio-loader {
+            display: block;
+            left: 50%;
+            margin-left: -60px;
+            position: absolute;
+            top: 0;
+            width: 120px;
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        .flow-player .play-pause-button,
+        .audio-player {
+            display: none;
+        }
+    }
+
+    .content-player {
+        .audio-player{
+            float:left;
+            width:20%;
+            max-width: 175px;
+        
+            .play-pause-button {
+                display: block; 
+                width: 150px;
+                height: 150px;          
+                background-image: url('../images/ken.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 50%;
+                position: relative;
+                margin-right: 30px;
+                &:before {
+                    position: absolute;
+                    left: 21%;
+                    top: 21%;
+                    font-size: 90px;
+                }
+                &:hover {
+                    &:before {
+                        color: $light-grey;
+                    }
+                }
+            }
+            .play-pause-button.icon-play:before {
+                position: absolute;
+                left: 11.5%;
+                top: 19.5%;
+                font-size: 90px;
+                opacity: 0.7;
+            }
+            .play-pause-button.icon-pause:before {
+                font-size: 90px;
+                position: absolute;
+                left: 11.7%;
+                top: 19.5%;
+                opacity: 0.7;
+            }
+        }
+        .audio-content {
+<<<<<<< HEAD
+			margin-top:20px;
+=======
+            float:left;
+            width:80%;
+
+>>>>>>> 98d50b944673a08ab50279d8608829f8953b7f7d
+            .title {
+                @include proxima-nova-bold();
+                text-transform: uppercase;
+                font-size: 16px;
+                color: #a3a3a3;
+                display: inline-block;
+                margin-bottom: 0;
+                margin-right: 6px;
+			     margin-top: 20px;
+                z-index: 2;
+                position: relative;
+                font-size: 16px;
+            }
+            .author {
+                font-size: 16px;
+                color: #000;
+                position: initial;
+            }
+            .description {
+                margin: 8px 0;
+                width: 78%;
+            }
+        }
+        .audio-wavesurf {
+            margin-top: 17px;
+        }
+    }
+
+    .flow-player {
+
+        position: relative;
+
+        .audio-wavesurf {
+            display: none;
+        }
+
+        .audio-image-wrapper {
+            background-size: cover;
+            height: 200px;
+            position: relative;
+            width: 300px;
+        }
+
+        .audio-loader,
+        .play-pause-button {
+            // border-radius: 50%;
+            // border: 3px solid #fff;
+            height: 70px;
+            left: 50%;
+            margin-left: -35px;
+            padding: 0;
+            position: absolute;
+            top: 4em;
+            width: 70px;
+            z-index: 1;
+        }
+
+        .play-pause-button {
+            display: block;
+            border: none;
+            background-color: none;
+            border-radius: none;
+            background-color: transparent;
+            cursor: pointer;
+            &:hover {
+                color: $light-grey !important;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .play-pause-button:before {
+            position: absolute;
+            top: 11%;
+            left: -35%;
+        }
+
+        .play-pause-button.icon-play:before {
+            position: absolute;
+            font-size: 90px;
+            opacity: 0.7;
+        }
+        .play-pause-button.icon-pause:before {
+            font-size: 90px;
+            position: absolute;
+            opacity: 0.7;
+        }
+
+        .audio-loader {
+            top: 2.7em;
+        }
+
+        // .play-pause-button {
+
+        //     &:hover {
+        //         cursor: pointer;
+        //         opacity: 0.7;
+        //     }
+
+        //     &:before {
+        //         @include play-button();
+        //         left: 2.5em;
+        //     }
+
+        //     &:focus {
+        //         outline: none;
+        //     }
+        // }
+
+        .change-asset {
+            @include change-asset-button();
+        }
+    }
+
+    &.is-playing {
+
+        .flow-player {
+            .play-pause-button:before {
+                border: none;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,84 @@
+<input type="file" id="file-select-media2" name="fileselect[]" multiple="multiple" style="position:absolute; top:-100px;"/>
+
+<input type="file" id="file-select-cover-image2" name="fileselect[]" style="position:absolute; top:-1000000px;"/>
+
+<section id="creation-flow-layout" class="animate-right">
+	<header class="select-or-edit">Select or Edit</header>
+
+<section id="edit-controls">
+    <ul class="control-wrapper-left">
+        <li class="change-template"><a> Change Template </a></li>
+        <li class="add-text"><a><span class="icon-create-text"></span> Add Text </a></li>
+        <li class="add-image"><a><span class="icon-create-image"></span>Upload Assets </a></li>
+        <li class="delete"><a><span class="icon-bin"></span></a></li>
+		<li class="clear-all"><a>Clear All</a></li>
+    </ul>
+
+    <div class="control-wrapper-right">
+        <div id="comments-switch">
+            <p class="settings-switch {{#if showComments}}settings-switch-on{{/if}}">
+                <span class="switch-status" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+            </p>
+            <p class="comments">Comments</p>
+        </div>
+
+        <ul class="color-controls">
+            <li class="grey color-item" data-color="grey"></li>
+            <li class="light color-item" data-color="white"></li>
+            <li class="dark color-item" data-color="black"></li>
+        </ul>
+    </div>
+</section>	
+	
+<!--
+    <section class="layout-options">
+        <div id="comments-switch">
+            <p class="settings-switch {{#if showComments}}settings-switch-on{{/if}}">
+                <span class="switch-status" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+            </p>
+            <p class="comments">Comments</p>
+        </div>
+
+        <ul>
+            <li class="grey color-item" data-color="grey"></li>
+            <li class="light color-item" data-color="white"></li>
+            <li class="dark color-item" data-color="black"></li>
+        </ul>
+
+        <section id="add-content" class="row collapse">
+            <div class="column small-6">
+                <a class="add-text">Add Text</a>
+            </div>
+            <div class="column small-6">
+                <a class="add-image">Add Assets</a>
+            </div>
+        </section>
+
+        <span class="icon-full-screen" id="layout-fullscreen"></span>
+    </section>
+-->
+
+    <section class="layout-types">
+        <div class="subheader"></div>
+        <div data-template="t2" class="layout-type-item three-img content-view active" id="preview-t2">
+        </div>
+        <div data-template="t4" class="layout-type-item text-layout content-view" id="preview-t4">
+        </div>
+        <div data-template="t5" class="layout-type-item text-layout content-view" id="preview-t5">
+        </div>
+        <div data-template="t3" class="layout-type-item text-layout content-view" id="preview-t3">
+        </div>
+        <div data-template="t1" class="layout-type-item text-layout content-view" id="preview-t1">
+        </div>
+    </section>
+
+    <section class="current-layout content-view">
+        <div class="subheader"></div>
+        <section id="content-hero-layout"></section>
+        <article id="content-main-layout">
+            <p>Template was not rendered</p>
+        </article>
+    </section>
+</section>

@@ -1,0 +1,75 @@
+@import '../../bower_components/medium-editor/dist/css/medium-editor.css';
+@import '../../bower_components/medium-editor/dist/css/themes/flat.css';
+
+.props {
+    .medium-editor-toolbar li button {
+        background-color: $black;
+        border-color: $dark-grey;
+        height: 30px;
+        line-height: 1;
+        min-width: 30px;
+        padding: 0 10px;
+
+        &:hover {
+            background-color: $grey;
+        }
+    }
+
+    .medium-editor-toolbar li .medium-editor-button-active {
+        background-color: $grey;
+    }
+
+    .medium-toolbar-arrow-under:after {
+        border-color: $black transparent transparent transparent;
+        top: 30px;
+    }
+	
+	.medium-editor-placeholder{
+		outline:none;
+		box-shadow:none;
+		border:none;
+	}
+
+  .text-edit-true, #add-text-edit {
+    outline: none;
+  }
+	
+    .medium-editor-placeholder:after {
+        color: $light-grey;
+		outline:none;
+		box-shadow:none;
+		border:none;
+    font-style: normal;
+    }
+}
+
+
+.medium-editor-anchor-preview{
+	background-color:#000;
+	&:before {
+
+	  border-color: transparent transparent #000 transparent;
+	}
+	.medium-editor-toolbar-anchor-preview{
+		background:#000;
+	}
+
+}
+
+
+.medium-editor-toolbar-form {
+	background-color: black;
+
+	input.medium-editor-toolbar-input{
+		background-color: black;
+		padding-left: 20px;
+	}
+	a.medium-editor-toolbar-save{
+
+	}
+	a.medium-editor-toolbar-close{
+		padding-right:10px;
+	}
+
+
+}

@@ -1,0 +1,104 @@
+
+<a href="javascript:void(0);" class="logo icon-propslogo" id="nav-home"></a>
+
+<ul>
+    {{#if modes.showSearch}}
+    <li class="icon search nav-icon">
+    <li class="tag-list-container"><div id="tag-list"></div></li>
+    <li class="nav-icon">
+            <input type="text" id="search-bar" maxlength="25"/>
+            <a class="icon-search" id="search-button"></a>
+     </li>
+    </li>
+    {{/if}}
+
+    {{#if modes.showLogin}}
+    <li class="nav-icon" id="nav-login">LOG IN</li>
+    {{else}}
+    {{#if modes.showCreate}}
+    <li class="icon new-project nav-icon"><a href="#flow"><p>Create New</p></a></li>
+    {{/if}}
+
+    
+    <li class="circle-count notification nav-icon">{{unseen.length}}</li>
+    
+    <li class="avatar nav-icon" style="background-image: url('{{image}}');"></li>
+    {{/if}}
+</ul>
+
+<div id="profile-nav">
+    <div class="arrow2"></div>
+    <div class="arrow"></div>
+    <ul>
+        <li><a href="javascript:void(0);" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="javascript:void(0);" id="nav-bookmarks">Bookmarks</a></li>
+        <li><a href="javascript:void(0);" id="nav-following">Following</a></li>
+        <!-- <li><a href="javascript:void(0);">Statistics</a></li> -->
+        <li><a href="javascript:void(0);" id="nav-settings">Settings</a></li>
+        <li class=""><div class="divider"></div></li>
+        <li><a href="javascript:void(0);" id="nav-logout">Logout</a></li>
+    </ul>
+</div>
+<div id="notification-nav">
+    <div class="arrow2"></div>
+    <div class="arrow"></div>
+    <ul>
+        {{#if hasNotifications}}
+        {{#each notifications}}
+        <li class="follow-notification notification-item">
+            <a href="#">
+                <div class='face' style="background-image: url('{{user_img}}')"></div>
+                <div class='info'><span class="name">{{getNotificationText type}}<span class="date">{{formatTimestamp date.date}}</span></div>
+                <div class="stats-rollover-popup">
+                    <div class='face' style="background-image: url('{{user_img}}')"></div>
+                    <div class='popup-info'><span class="name">{{name}}</span></div>
+                    <a class="follow-button follow-state" data-user="{{user_id}}">Follow</a>
+                   <!--  <div class="icons">
+                        <a class="icon-propslogo prop"><span>{{props}}</span></a>
+                        <a class="icon-stat-one prop"><span>{{views}}</span></a>
+                        <a class="icon-stat-two prop"><span>{{shares}}</span></a>
+                        <a class="icon-stat-three prop"><span>{{comment_count}}</span></a>
+                    </div> -->
+                </div>
+            </a>
+        </li>
+        {{/each}}
+        {{else}}
+        <!-- <li class="follow-notification notification-item">
+            <div class="info">You have no notifications.</div>
+        </li> -->
+        {{/if}}
+        <!-- "Gave Props" Notification
+        <li class='prop-notification notification-item'><a href="#/content/1">
+            <div class="notification-container">
+                <div class='face' style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/096/108/2cd3a89.jpg')"></div>
+                <div class='info'><span class="name">Dave</span>&nbsp;gave you props!<span class="date">1 month ago</span>
+                    <div class="props-container">
+                        <div class='prop' style="background-image: url('../images/proj1.jpg')"></div>
+                        <div class='prop' style="background-image: url('../images/proj2.jpg')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-rollover-popup">
+                    <div class='face' style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/096/108/2cd3a89.jpg')"></div>
+                    <div class='popup-info'><span class="name">{{name}}</span></div>
+                    <a class="follow-button">Follow</a>
+                    <div class="icons">
+                        <a class="icon-propslogo prop"><span>111</span></a>
+                        <a class="icon-stat-one prop"><span>201</span></a>
+                        <a class="icon-stat-two prop"><span>500</span></a>
+                        <a class="icon-stat-three prop"><span>75</span></a>
+                    </div>
+            </div>
+            </a>
+            <br />
+        </li>
+
+        <li class="feature-notification">
+            <a>
+                <div class='icon-propslogo'></div>
+                <div class='info'>Props has a new feature, Lorem Itpsum Dolor Amit. Pretty awesome.<span class="date">One month ago</span></div>
+            </a>
+        </li> -->
+    </ul>
+</div>
