@@ -176,23 +176,6 @@
             top: 2.7em;
         }
 
-        // .play-pause-button {
-
-        //     &:hover {
-        //         cursor: pointer;
-        //         opacity: 0.7;
-        //     }
-
-        //     &:before {
-        //         @include play-button();
-        //         left: 2.5em;
-        //     }
-
-        //     &:focus {
-        //         outline: none;
-        //     }
-        // }
-
         .change-asset {
             @include change-asset-button();
         }

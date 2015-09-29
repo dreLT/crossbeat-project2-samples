@@ -1,7 +1,6 @@
 $(document).ready(function() {
   
   var model;
-  // var getContentData = function(fn) {
     $.ajax({
       url: 'http://alpha.propitup.com/v1/content',
       dataType: 'json',
@@ -53,13 +52,6 @@ $(document).ready(function() {
               dataType: 'json',
               success: function(data) {
                 console.log('added');
-                // $.ajax({
-                //   url: 'http://alpha.propitup.com/v1/content',
-                //   dataType: 'json',
-                //   success: function(data) {
-                //     console.log(data);
-                //   }
-                // });
               },
               error: function() {
                 console.log('not added');
@@ -89,42 +81,4 @@ $(document).ready(function() {
       }
     });
 
-    // $.ajax({
-    //   url: 'http://alpha.propitup.com/v1/content/',
-    //   dataType: 'json',
-    //   success: function(data) {
-
-    //     // Grab the template script
-    //     var theTemplateScript = $("#content-template").html();
-
-    //     // Compile the template
-    //     var theTemplate = Handlebars.compile(theTemplateScript);
-
-    //     var context = data;
-
-    //     var theCompiledHtml = theTemplate(context);
-
-    //     $("body").html(theCompiledHtml);
-
-    //     console.log(data);
-         
-    //   },
-    //   error: function() {
-    //      console.log('no');
-    //   }
-    // });
   });
-
-  // }
-
-  // $.ajax({
-  //     type: GET,
-  //     url: 'http://alpha.propitup.com/v1/content/1',
-  //     dataType: 'json',
-  //     contentType: 'application/json',
-  //     success: function(data){
-  //         callback(data);
-  //     }
-  // })
-
-///v1/content/{id}/featured

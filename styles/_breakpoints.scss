@@ -1,5 +1,0 @@
-@mixin breakpoint($point) {
-  @if $point == creation-flow {
-    @media (max-width: 800px) { @content; }
-  }
-}

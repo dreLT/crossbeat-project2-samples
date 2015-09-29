@@ -1,4 +1,6 @@
 # Code from PRoPS project at CrossbeatNY  
+Included here are code samples from PRoPS, a project I worked on at CrossbeatNY
+
 ## Profile Page
 Details a user's profile and creative pieces:  
 

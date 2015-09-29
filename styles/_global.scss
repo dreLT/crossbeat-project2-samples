@@ -161,44 +161,6 @@ a.text-link:hover {
 }
 
 
-////--------//old Loader//--------
-//
-//#loader {
-//        position: fixed;
-//        z-index: 10000000;
-//        width: 100%;
-//        height: 100%;
-//        background: rgba(0,0,0,.5);
-////  opacity:.5
-//        top:0;
-//        left: 0;
-//        img {
-//                margin: auto;
-//                display: block;
-//                top:50%;
-//                transform: translateY(-50%);
-//                position: absolute;
-//                left: 50%;
-//                transform: translateX(-50%);
-//        }
-//
-//        &.no-dim{
-//            background: rgba(0,0,0,0);
-//        }
-//}
-//
-//#footer-loader {
-//    @extend #loader;
-//    height: 167px;
-//    bottom: 0;
-//    left: 0;
-//    top: initial;
-//    display: none;
-//    img {
-//      top: 39%;
-//    }
-//}
-
 // Remove Outline on Input Field Active State (Consider making this global with *) //
 
 .editable:focus, textarea:focus {

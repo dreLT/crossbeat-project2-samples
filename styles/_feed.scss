@@ -29,9 +29,6 @@
         &:hover {
             color: $light-grey;
         }
-        // &:hover {
-        //     border-bottom: 3px solid $global-nav-hover-underline;
-        // }
       }
     }
     .switchLayout{
@@ -45,15 +42,6 @@
 			right:20px;
 			margin-right: 7.5px;
 
-
-			// &:hover{
-			// 	color:$light-grey;
-   //      	}
-
-		}
-        // a.grid {
-        //     color: $light-grey;
-        // }
         .active {
             color: $medium-grey;
         }
@@ -98,16 +86,6 @@
     .column.gridNum-0, .column.gridNum-1, .column.gridNum-4, .column.gridNum-6 {//, .column.gridNum-7, .column.gridNum-10, .column.gridNum-12 {
         border-left: none;
     }
-
-
-// .column:nth-of-type(1), .column:nth-of-type(2), .column:nth-of-type(5), .column:nth-of-type(7) {
-//     border-left: none;
-// }
-
-// .column.gridNum-8, .column.gridNum-9 {
-//     max-height: none !important;
-//     height: 49.9vh !important;
-// }
 
     a.author{
         position: absolute;
@@ -278,10 +256,7 @@
             color:#fff;
             bottom:44px;
             left:15px;
-//            z-index: 2;
-			//position:relative;
 			width:31px;
-//			border:2px solid white;
 
 			span{
 				width: 33px;
@@ -294,13 +269,10 @@
                 color:#fff;
 
 				&.up-arrow{
-//					top:0;
-//					left:0px;
 					width:100%;
 				}
 
 				&.down-arrow{
-//					bottom:0;
 					left:1px;
 					width:100%;
 				}
@@ -357,7 +329,6 @@
                     font-size: 2em;
                     line-height: 1.2;
                     margin-top: 6px;
-                    // word-break: break-all;
                     &:first-letter {
                         text-transform: capitalize;
                     }
@@ -368,7 +339,6 @@
                 }
                 span.overlay-shutter-icon {
                     color: #fff;
-                    // margin-bottom: 8px;
                     font-size: 1.75em;
                 }
                 span:nth-of-type(2) {
@@ -476,12 +446,10 @@
 
     // listview columns
     #collection.listView {
-        // max-width:100%;
     .column{
         width: 100%;
         padding: 15px 15px 0 44px;
         height: 153px;
-        // overflow: hidden;
             &:nth-of-type(odd){
                 background-color: #fdfdfd;
                 -moz-box-shadow:    inset  0  8px 8px -10px #eee,
@@ -495,7 +463,6 @@
                 position: absolute;
                 z-index: 1;
                 display: block;
-                //width: 100%;
                 height: 100%;
                 cursor: pointer;
             }
@@ -541,10 +508,7 @@
                 }
                 a.author {
                     position: static;
-                    // vertical-align: initial;
                     z-index: 2;
-                    // bottom: initial;
-                    // left: initial;
                     display: inline-block;
                     font-size: 12px;
                     &:hover {
