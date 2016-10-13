@@ -1,4 +1,4 @@
-# Code from PRoPS project at CrossbeatNY  
+# Code from __________ project at ___________
 Included here are code samples from ___________, a project I worked on at _____________
 
 ## Profile Page
